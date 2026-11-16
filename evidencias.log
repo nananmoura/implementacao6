@@ -1,0 +1,125 @@
+Script started on 2026-11-16 17:11:09-03:00 [TERM="xterm-256color" TTY="/dev/pts/9" COLUMNS="105" LINES="15"]
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mdate[27m
+[7mwhoami[27m
+[7mpwd[27m[A[A]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ date
+whoami
+pwd
+[?2004lMon Nov 16 17:11:24 -03 2026
+maria
+/mnt/c/Users/maria/Downloads/mfomd
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mmake clean[27m
+[7mmake[27m[A]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ make clean
+make
+[?2004lrm -f banker result.txt
+gcc -Wall -Wextra -O2 -o banker banker.c
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mprintf '7,5,3\n3,2,2\n9,0,2\n2,2,2\n4,3,3\n' > custom[27m[7me[27m[7mr.txt[27m[A]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ printf '7,5,3\n3,2,2\n9,0,2\n2,2,2\n4,3,3\n' > customer.txt
+[?2004l[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mprintf 'RQ 0 0 2 1\nRQ 2 3 0 2\nRQ 1 2 0 0\nRQ 4 0 0 [27m[7m2[27m[7m\nRL 0 0 1 1\nRQ 3 2 1 1\n*\nRQ 4 4 0 0\nRQ 1 1 0 2\nRQ 0 0 2 0\nRQ 2 0 1 0\n' > commands.txt[27m[Aprintf 'RQ 0 0 2 1\nRQ 2 3 0 2\nRQ 1 2 0 0\nRQ 4 0 0 2\nRL 0 0 1 1\nRQ 3 2 1 1\n*\nRQ 4 4 0 0\nRQ 1 1 0 2\nRQ 0 0 2 0\nRQ 2 0 1 0\n' > commands.txt
+[?2004l[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7m./banker 10 5 7[27m
+[7mcat result.txt[27m[A]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ ./banker 10 5 7
+cat result.txt
+[?2004lAllocate to customer 0 the resources 0 2 1
+Allocate to customer 2 the resources 3 0 2
+Allocate to customer 1 the resources 2 0 0
+Allocate to customer 4 the resources 0 0 2
+Release from customer 0 the resources 0 1 1
+Allocate to customer 3 the resources 2 1 1
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 1 0       |   7 4 3 
+3 2 2     |   2 0 0       |   1 2 2 
+9 0 2     |   3 0 2       |   6 0 0 
+2 2 2     |   2 1 1       |   0 1 1 
+4 3 3     |   0 0 2       |   4 3 1 
+AVAILABLE 3 3 2 
+The resources 3 3 2 are not enough to customer 4 request 4 0 0
+Allocate to customer 1 the resources 1 0 2
+The customer 0 request 0 2 0 was denied because result in an unsafe state
+The customer 2 request 0 1 0 was denied because exceed its maximum allocation
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ cat > esperado.txt << 'EOF'
+Allocate to customer 0 the resources 0 2 1
+Allocate to customer 2 the resources 3 0 2
+Allocate to customer 1 the resources 2 0 0
+[7mAllocate to customer 4 the resources 0 0 2[27m
+[7mRelease from customer 0 the resources 0 1 1[27m
+[7mAllocate to customer 3 the resources 2 1 1[27m
+[7mMAXIMUM   |   ALLOCATION  |   NEED[27m
+[7m7 5 3     |   0 1 0       |   7 4 3[27m
+[7m3 2 2     |   2 0 0       |   1 2 2[27m
+[7m9 0 2     |   3 0 2       |   6 0 0[27m
+[7m2 2 2     |   2 1 1       |   0 1 1[27m
+[7m4 3 3     |   0 0 2       |   4 3 1[27m
+[7mAVAILABLE 3 3 2[27m
+[7mThe resources 3 3 2 are not enough to customer 4 request 4 0 0[27m
+[7mAllocate to customer 1 the resources 1 0 2[27m[7mThe customer 0 request 0 2 0 was denied because result in an unsafe state[27m[7mThe customer 2 request 0 1 0 was denied because exceed its maximum allocation[27m[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[AAllocate to customer 4 the resources 0 0 2
+Release from customer 0 the resources 0 1 1
+Allocate to customer 3 the resources 2 1 1
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 1 0       |   7 4 3
+3 2 2     |   2 0 0       |   1 2 2
+9 0 2     |   3 0 2       |   6 0 0
+2 2 2     |   2 1 1       |   0 1 1
+4 3 3     |   0 0 2       |   4 3 1
+AVAILABLE 3 3 2
+The resources 3 3 2 are not enough to customer 4 request 4 0 0
+Allocate to customer 1 the resources 1 0 2The customer 0 request 0 2 0 was denied because result in an unsafe stateThe customer 2 request 0 1 0 was denied because exceed its maximum allocationEOF
+[?2004l[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ v[K[7mcat result.txt[27m
+[7mdiff -Z result.txt esperado.txt && echo igual[27m[A]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ cat result.txt
+diff -Z result.txt esperado.txt && echo igual
+[?2004lAllocate to customer 0 the resources 0 2 1
+Allocate to customer 2 the resources 3 0 2
+Allocate to customer 1 the resources 2 0 0
+Allocate to customer 4 the resources 0 0 2
+Release from customer 0 the resources 0 1 1
+Allocate to customer 3 the resources 2 1 1
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 1 0       |   7 4 3 
+3 2 2     |   2 0 0       |   1 2 2 
+9 0 2     |   3 0 2       |   6 0 0 
+2 2 2     |   2 1 1       |   0 1 1 
+4 3 3     |   0 0 2       |   4 3 1 
+AVAILABLE 3 3 2 
+The resources 3 3 2 are not enough to customer 4 request 4 0 0
+Allocate to customer 1 the resources 1 0 2
+The customer 0 request 0 2 0 was denied because result in an unsafe state
+The customer 2 request 0 1 0 was denied because exceed its maximum allocation
+igual
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mclear[27mclear
+[?2004l[H[2J[3J[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mdate[27mdate
+[?2004lMon Nov 16 17:20:25 -03 2026
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mcat result.txt[27mcat result.txt
+[?2004lAllocate to customer 0 the resources 0 2 1
+Allocate to customer 2 the resources 3 0 2
+Allocate to customer 1 the resources 2 0 0
+Allocate to customer 4 the resources 0 0 2
+Release from customer 0 the resources 0 1 1
+Allocate to customer 3 the resources 2 1 1
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 1 0       |   7 4 3 
+3 2 2     |   2 0 0       |   1 2 2 
+9 0 2     |   3 0 2       |   6 0 0 
+2 2 2     |   2 1 1       |   0 1 1 
+4 3 3     |   0 0 2       |   4 3 1 
+AVAILABLE 3 3 2 
+The resources 3 3 2 are not enough to customer 4 request 4 0 0
+Allocate to customer 1 the resources 1 0 2
+The customer 0 request 0 2 0 was denied because result in an unsafe state
+The customer 2 request 0 1 0 was denied because exceed its maximum allocation
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mdiff -Z result.txt esperado.txt && echo igual[27mdiff -Z result.txt esperado.txt && echo igual
+[?2004ligual
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [K]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7m./banker 10 5[27m./banker 10 5
+[?2004lerro: customer.txt linha 1: formato invalido (esperado 2 colunas)
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7m./banker 10 5 x[27m./banker 10 5 x
+[?2004lerro: argumento 'x' invalido
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mmv customer.txt c.bak[27mmv customer.txt c.bak
+[?2004l[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
+[?2004lerro: nao abriu customer.txt
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
+[?2004lerro: nao abriu customer.txt
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mmv c.bak customer.txt[27mmv c.bak customer.txt
+[?2004l[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mprintf 'RQ 0 10 5 7\n' > commands.txt[27mprintf 'RQ 0 10 5 7\n' > commands.txt
+[?2004l[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
+[?2004l[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mcat result.txt[27mcat result.txt
+[?2004lThe customer 0 request 10 5 7 was denied because exceed its maximum allocation
+[?2004h]0;maria@Nanda1512: /mnt/c/Users/maria/Downloads/mfomd[01;32mmaria@Nanda1512[00m:[01;34m/mnt/c/Users/maria/Downloads/mfomd[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-11-16 17:26:51-03:00 [COMMAND_EXIT_CODE="0"]
